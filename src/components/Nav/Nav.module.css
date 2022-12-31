@@ -1,0 +1,79 @@
+.navBar {
+    background: #2b828a;
+    width: 90%;
+    padding: 5px;
+    margin: 40px auto;
+    margin-top: 0;
+    /* border: 1px solid black; */
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    position: relative;
+    
+
+}
+
+.busqueda {
+    /* border: 1px solid black; */
+    width: 300px;
+    display: flex;
+    justify-content: flex-end;
+
+}
+
+.linksContainer {
+    /* border: 1px solid black; */
+    width: 30%;
+    height: 50px;
+    position: absolute;
+    left: 5px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    
+}
+
+.menu {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    
+}
+
+.menu li a{
+    display: inline-flex;
+    margin: auto 40px;
+    font-size: 25px;
+    text-decoration: none;
+
+}
+
+
+.textoLink {
+    color: #fff;
+    font-weight: bold;
+    transition: all .1s ease;
+}
+
+.textoLink:hover {
+    text-shadow: 0px 0px 5px #bdde3f
+}
+
+.active {
+    text-shadow: 0px 0px 5px #bdde3f
+}
+
+.img {
+    /* border: 1px solid black; */
+    width: 350px;
+    height: 125px;
+    background: url('./img.svg.png');
+    position: absolute;
+    background-size: contain;
+    background-repeat: no-repeat;
+    right: 35%;
+    margin-top: -25px;
+}
