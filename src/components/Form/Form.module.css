@@ -1,0 +1,94 @@
+.divForm {
+    background: linear-gradient(to bottom, rgb(30, 31, 91) 0%, rgb(27, 159, 190) 76%, rgb(105, 199, 163) 100%);
+    border: solid #040926 5px;
+    border-radius: 10px;
+    width: 40%;
+    margin: 2px auto;
+    padding: 15px;
+    position: relative;
+    display: flex;    
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.cabecera {
+    width: 350px;
+    height: 125px;
+    margin: 3px auto;
+    background: url('./img.svg.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.titulo {
+    
+    color: #EDF2F4;
+    text-shadow: 0px 0px 2px #bdde3f;
+    font-style: italic;
+}
+
+.labelUsuario, .labelContra {
+    margin: 3px;
+    padding: 2px;
+    font-weight: bold;
+    background: #040926;
+    color: #EDF2F4;
+    text-shadow: 0px 0px 2px #bdde3f;
+    font-style: italic;
+    border-radius: 3px;
+}
+
+.inputContra, .inputUsuario {
+    width: 200px;    
+    margin-bottom: 40px;
+    border: 3px solid #fff;
+    border-radius: 5px;
+    transition: all .3s ease;
+}
+
+.inputContra:focus, .inputUsuario:focus {
+    outline: none;
+    border: 3px solid #28965A;
+} 
+
+.errorUsuario, .errorContra {
+    /* border: 1px solid #fff; */
+    width: 200px;
+    margin-top: 1px;
+    font-size: 12px;
+    font-weight: bold;
+    font-style: italic;
+    color: #EDF2F4;
+    text-shadow: 0px 0px 2px #bdde3f;
+}
+
+.errorUsuario {
+    position: absolute;
+    top: 111px;
+    left: 175px;
+}
+
+.errorContra {
+    position: absolute;
+    top: 174px;
+    left: 210px;
+}
+
+.botonIngresar {
+    padding: 5px;
+    width: 75px;
+    height: 30px;
+    text-align: center;
+    font-weight: bold;
+    border: none;
+    /* border: 1.5px solid #EDF2F4; */
+    border-radius: 5px;
+    background: #28965A;
+    color: #EDF2F4;
+    transition: all .1s ease;
+}
+
+.botonIngresar:hover {
+    box-shadow: 0px 0px 3px #EDF2F4;
+}

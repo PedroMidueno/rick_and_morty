@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './App.css';
 import Cards from './components/Cards/Cards.jsx';
 import Nav from './components/Nav/Nav.jsx';
 import About from './components/About/About';
 import Detail from './components/Detail/Detail'
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, useLocation, useNavigate } from 'react-router-dom';
 import Form from './components/Form/Form';
 
 
@@ -45,13 +45,33 @@ export default function App() {
     })
   }
 
+  const location = useLocation();
 
+  const [access, setAccess] = useState(false);
+  const navigate = useNavigate();
+  const username = 'yo@henry.mx';
+  const password = 'Henry33b';
+
+  function login(userData) {
+    if (userData.username === username && userData.password === password) {
+      setAccess(true);
+      navigate('/home');
+    } else {
+      window.alert('El usuario y/o contraseña son incorrectos')
+    }
+  }
+
+  useEffect(() => {
+    !access && navigate('/')
+  }, [access]);
 
   return (
     <div className='App' style={{ padding: '25px' }}>
-      <Nav onSearch={onSearch} />
+      {location.pathname !== '/' && <Nav onSearch={onSearch} />}
       <Routes>
-        <Route path='/' element={<Form/>} />
+        <Route path='/' element={<Form
+          login={login}
+        />} />
         <Route path='/home' element={<Cards
           characters={characters}
           onClose={onClose}
