@@ -47,6 +47,10 @@
     transition: all .3s ease;
 }
 
+.inputUsuario {
+    width:225px;
+}
+
 .inputContra:focus, .inputUsuario:focus {
     outline: none;
     border: 3px solid #28965A;
@@ -66,7 +70,7 @@
 .errorUsuario {
     position: absolute;
     top: 111px;
-    left: 175px;
+    left: 160px;
 }
 
 .errorContra {

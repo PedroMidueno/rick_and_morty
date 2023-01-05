@@ -81,18 +81,21 @@ export default function Form(props) {
                 <div className={styles.divUsuario}>
                     <label htmlFor="usuario" className={styles.labelUsuario}>Usuario:</label>
                     <input type="text" id='usuario' name='username' value={userData.username}
-                        onChange={handleInputChange} className={styles.inputUsuario} />
+                        onChange={handleInputChange} className={styles.inputUsuario}
+                        placeholder="Ingrese su usuario"/>
                     <p className={styles.errorUsuario}>{errors.username}</p>
                 </div>
 
                 <div className={styles.divContra}>
                     <label htmlFor="contraseña" className={styles.labelContra}>Contraseña:</label>
                     <input type="password" id='contraseña' name='password' value={userData.password}
-                        onChange={handleInputChange} className={styles.inputContra} />
+                        onChange={handleInputChange} className={styles.inputContra}
+                        placeholder="Ingrese su contraseña"/>
                     <p className={styles.errorContra}>{errors.password}</p>
                 </div>
 
-                <button className={styles.botonIngresar} id='botonIngresar' onClick={() => handleSubmit(userData)}>Ingresar</button>
+                <button className={styles.botonIngresar} id='botonIngresar'
+                onClick={() => handleSubmit(userData)}>Ingresar</button>
 
             </div>
         </div>

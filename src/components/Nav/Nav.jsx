@@ -1,10 +1,13 @@
 import React from 'react'
 import SearchBar from "../SearchBar/SearchBar.jsx";
 import styles from './Nav.module.css'
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 
 
 export default function Nav(props) {
+
+    const location = useLocation();
+
     return (
         <div className={styles.navBar}>
             <div className={styles.linksContainer}>
@@ -21,14 +24,20 @@ export default function Nav(props) {
 
                         }><span className={styles.textoLink}>About</span></NavLink>
                     </li>
+                
                 </ul>
             </div>
             <div className={styles.img}></div>
 
+            <a href="">
+                <span className={styles.logout}>Cerrar sesión</span>
+            </a>
+
             <div className={styles.busqueda}>
-                <SearchBar
+            {location.pathname === "/home" && <SearchBar
                     onSearch={props.onSearch}
-                />
+                />} 
+                
             </div>
         </div>
     )

@@ -1,6 +1,7 @@
 .navBar {
     background: #2b828a;
     width: 90%;
+    height: 60px;
     padding: 5px;
     margin: 40px auto;
     margin-top: 0;
@@ -64,6 +65,28 @@
 
 .active {
     text-shadow: 0px 0px 5px #bdde3f
+}
+
+.logout {
+    position: absolute;
+/*    border:1px solid black;*/
+    width: 100px;
+    top: 10px;
+    line-height: 20px;
+    font-size: 20px;
+    right: 270px;
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    transition: all .1s ease;
+}
+
+.navBar a {
+    text-decoration: none;
+}
+
+.logout:hover {
+    text-shadow: 0px 0px 5px #bdde3f;
 }
 
 .img {
