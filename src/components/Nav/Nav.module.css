@@ -36,6 +36,7 @@
 }
 
 .menu {
+    margin-left: 50px;
     list-style: none;
     padding: 0;
     display: flex;
@@ -46,7 +47,7 @@
 
 .menu li a{
     display: inline-flex;
-    margin: auto 40px;
+    margin: auto 18px;
     font-size: 25px;
     text-decoration: none;
 
@@ -93,7 +94,7 @@
     /* border: 1px solid black; */
     width: 350px;
     height: 125px;
-    background: url('./img.svg.png');
+    background: url('../../../public/img.svg.png');
     position: absolute;
     background-size: contain;
     background-repeat: no-repeat;

@@ -6,6 +6,7 @@ import About from './components/About/About';
 import Detail from './components/Detail/Detail'
 import { Routes, Route, useLocation, useNavigate } from 'react-router-dom';
 import Form from './components/Form/Form';
+import Favorites from './components/Favorites/Favorites';
 
 
 export default function App() {
@@ -82,6 +83,7 @@ export default function App() {
         />} />
         <Route path='/about' element={<About />} />
         <Route path='/detail/:detailId' element={<Detail />} />
+        <Route path='/favorites' element={<Favorites />} />
       </Routes>
     </div>
   )

@@ -12,6 +12,7 @@
     display: flex;
     flex-direction: column;
     transition: all .1s ease;
+    position: relative;
 }
 
 .divImg {
@@ -82,8 +83,19 @@
     
 }
 
+.botonFavorito{
+    width: 12%;
+    left: 2px;
+    top: 2px;
+    position: absolute;
+    background: transparent;
+    border: none;
+    font-size: 23px;
+    
+}
 
-.boton {
+
+.botonCerrar {
     width: 12%;
     align-self: flex-end;
     order: 1;
@@ -97,8 +109,13 @@
 
 }
 
-.boton:hover {
+.botonCerrar:hover {
     background: #ff0000;
+    cursor: pointer;
+}
+
+.botonFavorito:hover {
+    cursor: pointer;
 }
 
 .card:hover {

@@ -1,11 +1,46 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import styles from './Card.module.css';
 import { Link } from "react-router-dom";
+import { deleteFavorite, addFavorite } from "../../redux/actions/actions";
+import { connect } from "react-redux";
 
-export default function Card(props) {
+function Card(props) {
+
+   const [isFav, setIsFav] = useState(false);
+
+   const handleFavorite = () => {
+      if (isFav) {
+         setIsFav(false);
+         props.deleteFavorite(props.id)
+      } else {
+         setIsFav(true);
+         props.addFavorite(props)
+      }
+   }
+
+   useEffect(() => {
+      props.myFavorites.forEach((fav) => {
+         if (fav.id === props.id) {
+            setIsFav(true);
+         }      
+      });
+   }, [props.myFavorites])
+
    return (
-      <div className={styles.card}>
-         <button className={styles.boton} onClick={props.onClose}>X</button>
+      <div className={styles.card} title={`Personaje: ${props.id}`}>
+         {
+            isFav ? (
+               <button onClick={handleFavorite} className={styles.botonFavorito}
+                  title="Quitar de favoritos">❤️</button>
+            ) : (
+               <button onClick={handleFavorite} className={styles.botonFavorito}
+                  title="Añadir a favoritos">🤍</button>
+            )
+         }
+         <button className={styles.botonCerrar} onClick={() => {
+            props.deleteFavorite(props.id);
+            props.onClose()            
+         }} title="Cerrar">X</button>
 
          <div className={styles.divNombre}>
             <Link to={`/detail/${props.id}`}>
@@ -28,4 +63,19 @@ export default function Card(props) {
       </div>
    );
 }
+
+const mapStateToProps = (state) => {
+   return {
+      myFavorites: state.myFavorites
+   }
+}
+
+const mapDispatchToProps = (dispatch) => {
+   return {
+      addFavorite: (char) => { dispatch(addFavorite(char)) },
+      deleteFavorite: (id) => { dispatch(deleteFavorite(id)) }
+   }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Card);
 

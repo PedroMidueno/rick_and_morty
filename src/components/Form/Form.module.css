@@ -16,13 +16,12 @@
     width: 350px;
     height: 125px;
     margin: 3px auto;
-    background: url('./img.svg.png');
+    background: url('../../../public/img.svg.png');
     background-size: contain;
     background-repeat: no-repeat;
 }
 
-.titulo {
-    
+.titulo {    
     color: #EDF2F4;
     text-shadow: 0px 0px 2px #bdde3f;
     font-style: italic;

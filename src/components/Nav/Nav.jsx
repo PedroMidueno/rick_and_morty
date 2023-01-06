@@ -24,7 +24,12 @@ export default function Nav(props) {
 
                         }><span className={styles.textoLink}>About</span></NavLink>
                     </li>
-                
+                    <li>
+                        <NavLink to='/Favorites' className={({ isActive }) =>
+                            isActive ? styles.active : null
+
+                        }><span className={styles.textoLink}>Favorites</span></NavLink>
+                    </li>
                 </ul>
             </div>
             <div className={styles.img}></div>
