@@ -55,7 +55,7 @@ function Card(props) {
 
          <div className={styles.divImg}>
             <Link to={`/detail/${props.id}`}>
-               <img className={styles.img} src={props.image} alt={props.image} />
+               <img className={styles.img} src={props.image} alt={props.image} onError="this.src='../../../public/cargando.png';" />
             </Link>
          </div>
 

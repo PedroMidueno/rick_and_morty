@@ -21,8 +21,8 @@
 
 .img {
     width: 90%;
-    /* order: 3; */
-    align-self: center;
+    /* order: 3;
+    align-self: center; */
     border: 2px solid #040926;
     border-radius: 10px;
     margin-bottom: 5px;
