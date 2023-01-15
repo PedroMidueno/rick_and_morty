@@ -53,8 +53,8 @@ export default function App() {
   // const username = 'yo@henry.mx';
   // const password = 'Henry33b';
 
-  const username = 'admin';
-  const password = 'admin';
+  const username = 'ft33b@henry.mx';
+  const password = 'Alumnos33b';
 
 
   function login(userData) {
