@@ -82,7 +82,7 @@ export default function Form(props) {
                     <label htmlFor="usuario" className={styles.labelUsuario}>Usuario:</label>
                     <input type="text" id='usuario' name='username' value={userData.username}
                         onChange={handleInputChange} className={styles.inputUsuario}
-                        placeholder="ft33b@henry.mx"/>
+                        placeholder="Ingrese su usuario"/>
                     <p className={styles.errorUsuario}>{errors.username}</p>
                 </div>
 
@@ -90,7 +90,7 @@ export default function Form(props) {
                     <label htmlFor="contraseña" className={styles.labelContra}>Contraseña:</label>
                     <input type="password" id='contraseña' name='password' value={userData.password}
                         onChange={handleInputChange} className={styles.inputContra}
-                        placeholder="Alumnos33b"/>
+                        placeholder="Ingrese su contraseña"/>
                     <p className={styles.errorContra}>{errors.password}</p>
                 </div>
 

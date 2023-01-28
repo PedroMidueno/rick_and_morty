@@ -50,11 +50,10 @@ export default function App() {
 
   const [access, setAccess] = useState(false);
   const navigate = useNavigate();
-  // const username = 'yo@henry.mx';
-  // const password = 'Henry33b';
 
-  const username = 'a'; //ft33b@henry.mx
-  const password = 'a'; //Alumnos33b
+
+  const username = 'ft33b@henry.mx';// 'a'
+  const password = 'Alumnos33b'; // 'a'
 
 
   function login(userData) {
