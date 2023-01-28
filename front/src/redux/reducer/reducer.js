@@ -29,7 +29,7 @@ const reducer = (state = initialState, { type, payload }) => {
         case FILTER:
             var allCharacters = [...state.allFavorites];            
             var allCharsFilter = allCharacters.filter((elem) => {                
-                return elem.gender == payload
+                return elem.gender === payload
             });
             return {
                 ...state,

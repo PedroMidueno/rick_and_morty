@@ -21,8 +21,8 @@ export default function App() {
   // }
 
   function onSearch(character) {
-    fetch(`https://rickandmortyapi.com/api/character/${character}`)
-      .then((response) => response.json())
+    fetch(`http://localhost:3001/rickandmorty/character/${character}`)
+      .then((response) => response.json()) //Convierte lo recibido a objeto
       .then((data) => {
         if (data.name) {
           let existe = characters.find((elem) => elem.id === data.id);
@@ -53,8 +53,8 @@ export default function App() {
   // const username = 'yo@henry.mx';
   // const password = 'Henry33b';
 
-  const username = 'ft33b@henry.mx';
-  const password = 'Alumnos33b';
+  const username = 'a'; //ft33b@henry.mx
+  const password = 'a'; //Alumnos33b
 
 
   function login(userData) {
