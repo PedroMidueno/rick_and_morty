@@ -1,37 +1,28 @@
 const http = require('http');
-
-const PORT = 3001;
+const { getCharById, getCharDetail } = require('../controllers/index');
 const characters = require('../utils/data');
 
-const error = (res) => {
-    res.writeHead(404, { 'Content-Type': 'text/plain' })
-    res.end('Route not found')
-}
+const PORT = 3001;
+
 
 http.createServer((req, res) => {
     const allUrl = req.url.split('/')
     const id = Number(allUrl.pop())
     const url = allUrl.join('/')
 
-    if (url === '/rickandmorty/character') {
-        const character = characters.find((char) => {
-            return char.id === id;
-        })
+    switch (url) {
+        case '/onsearch':
+            return getCharById(res, id);
 
-        if (character) {
-            res.writeHead(200, { 'Content-Type': 'application/json' })
-            res.end(JSON.stringify(character))
-        } else {
-            error(res)
-        }
+        case '/detail':
+            return getCharDetail(res, id);
 
-    } else if (req.url === '/rickandmorty/characters') {
-        res.writeHead(200, { 'Content-Type': 'application/json' })
-        res.end(JSON.stringify(characters))
-    } else {
-        error(res)
+        default:
+            res.writeHead(404, { 'Content-Type': 'text/plain' });
+            res.end('Route not found');
     }
-}).listen(PORT, ()=>{
+
+}).listen(PORT, () => {
     console.log(`Servidor corriendo en: http://localhost:${PORT}`)
 })
 

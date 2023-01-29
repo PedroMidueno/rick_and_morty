@@ -13,15 +13,9 @@ export default function App() {
 
   const [characters, setCharacters] = useState([])
 
-  // const example = {
-  //   name: 'Morty Smith',
-  //   species: 'Human',
-  //   gender:'Male',
-  //   image: 'https://rickandmortyapi.com/api/character/avatar/2.jpeg'
-  // }
 
   function onSearch(character) {
-    fetch(`http://localhost:3001/rickandmorty/character/${character}`)
+    fetch(`http://localhost:3001/onsearch/${character}`)
       .then((response) => response.json()) //Convierte lo recibido a objeto
       .then((data) => {
         if (data.name) {
@@ -52,8 +46,8 @@ export default function App() {
   const navigate = useNavigate();
 
 
-  const username = 'ft33b@henry.mx';// 'a'
-  const password = 'Alumnos33b'; // 'a'
+  const username = 'a';//  'ft33b@henry.mx'
+  const password = 'a'; //  'Alumnos33b'
 
 
   function login(userData) {
