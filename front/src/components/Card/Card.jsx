@@ -8,13 +8,22 @@ function Card(props) {
 
    const [isFav, setIsFav] = useState(false);
 
+   const propsToSend ={
+      id: props.id,
+      name: props.name,
+      species: props.species,
+      gender: props.gender,
+      image: props.image,
+      onClose: props.onClose
+   }
+
    const handleFavorite = () => {
       if (isFav) {
          setIsFav(false);
          props.deleteFavorite(props.id)
       } else {
          setIsFav(true);
-         props.addFavorite(props)
+         props.addFavorite(propsToSend)
       }
    }
 
@@ -24,7 +33,7 @@ function Card(props) {
             setIsFav(true);
          }      
       });
-   }, [props.myFavorites])
+   }, [props.myFavorites, props.id])
 
    return (
       <div className={styles.card} title={`Personaje: ${props.id}`}>

@@ -7,6 +7,7 @@ import Detail from './components/Detail/Detail'
 import { Routes, Route, useLocation, useNavigate } from 'react-router-dom';
 import Form from './components/Form/Form';
 import Favorites from './components/Favorites/Favorites';
+import axios from 'axios';
 
 
 export default function App() {
@@ -14,22 +15,27 @@ export default function App() {
   const [characters, setCharacters] = useState([])
 
 
-  function onSearch(character) {
-    fetch(`http://localhost:3001/onsearch/${character}`)
-      .then((response) => response.json()) //Convierte lo recibido a objeto
-      .then((data) => {
-        if (data.name) {
-          let existe = characters.find((elem) => elem.id === data.id);
-          if (existe) {
-            window.alert("Ya se agregó este personaje");
-          } else {
-            setCharacters((oldChars) => [...oldChars, data]);
-          }
+  async function onSearch(character) {
 
+    try {
+      const response = await axios(`http://localhost:3001/rickandmorty/character/${character}`)
+      const data = response.data
+      if (data.name) {
+
+        let existe = characters.find((elem) => elem.id === data.id);
+        if (existe) {
+          window.alert("Ya se agregó este personaje");
         } else {
-          window.alert('No hay personaje con ese ID')
+          setCharacters((oldChars) => [...oldChars, data]);
         }
-      });
+
+      } else {
+        window.alert('No hay personaje con ese ID')
+      }
+    } catch (error) {
+      console.log(error)
+    }
+
 
   }
 
@@ -46,8 +52,8 @@ export default function App() {
   const navigate = useNavigate();
 
 
-  const username = 'a';//  'ft33b@henry.mx'
-  const password = 'a'; //  'Alumnos33b'
+  const username = 'FT_33B@henry.mx';//  ''
+  const password = 'Alumnos33B'; //  ''
 
 
   function login(userData) {
@@ -59,16 +65,23 @@ export default function App() {
     }
   }
 
+  function logOut(){
+    setAccess(false);
+    
+  }
+
   useEffect(() => {
     !access && navigate('/')
-  }, [access]);
+  }, [access, navigate]);
 
   return (
     <div className='App' style={{ padding: '25px' }}>
-      {location.pathname !== '/' && <Nav onSearch={onSearch} />}
+      {location.pathname !== '/' && <Nav onSearch={onSearch} logOut={logOut} />}
       <Routes>
         <Route path='/' element={<Form
           login={login}
+          username={username}
+          password={password}
         />} />
         <Route path='/home' element={<Cards
           characters={characters}

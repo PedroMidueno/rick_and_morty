@@ -8,7 +8,7 @@ function Favorites({ myFavorites, filterCards, orderCards, showAll }) {
 
     useEffect(() => {
         return showAll()
-    }, [])
+    }, [showAll])
 
     return (
         <>
@@ -30,20 +30,16 @@ function Favorites({ myFavorites, filterCards, orderCards, showAll }) {
                 <select name="selector" id="typeSelector" className={styles.selectorType}>
                     <option value="All" onClick={() => { showAll() }}>Mostrar todos</option>
                     <option value="Male" onClick={(event) => {
-                        filterCards(event.target.value)
-                        console.log("myFavorites en la option...", myFavorites)
+                        filterCards(event.target.value)                        
                     }}>Male</option>
                     <option value="Female" onClick={(event) => {
-                        filterCards(event.target.value)
-                        console.log("myFavorites en la opction...", myFavorites)
+                        filterCards(event.target.value)                        
                     }}>Female</option>
                     <option value="unknown" onClick={(event) => {
-                        filterCards(event.target.value)
-                        console.log("myFavorites en la opction...", myFavorites)
+                        filterCards(event.target.value)                        
                     }}>Unknown</option>
                     <option value="Genderless" onClick={(event) => {
-                        filterCards(event.target.value)
-                        console.log("myFavorites en la opction...", myFavorites)
+                        filterCards(event.target.value)                        
                     }}>Genderless</option>
                 </select>
             </div>
@@ -58,7 +54,7 @@ function Favorites({ myFavorites, filterCards, orderCards, showAll }) {
                         );
                     })
                 ) : (
-                    <h2 className={styles.noFav}>Nada para mostrar aqui.</h2>
+                    <h2 className={styles.noFav}>No has agregado personajes a favoritos!!!</h2>
                 )
 
                 }

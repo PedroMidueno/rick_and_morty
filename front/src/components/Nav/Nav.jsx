@@ -34,7 +34,7 @@ export default function Nav(props) {
             </div>
             <div className={styles.img}></div>
 
-            <a href="">
+            <a href='/' onClick={props.logOut}>
                 <span className={styles.logout}>Cerrar sesión</span>
             </a>
 

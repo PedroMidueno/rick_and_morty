@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import styles from './Detail.module.css';
 
 export default function Detail() {
 
     const { detailId } = useParams();
     // const navigate = useNavigate();
-
     // function backToHome() {
     //     navigate("/home");
     // }
@@ -14,7 +13,7 @@ export default function Detail() {
     const [character, setCharacter] = useState({});
 
     useEffect(() => {
-        fetch(`http://localhost:3001/detail/${detailId}`)
+        fetch(`http://localhost:3001/rickandmorty/detail/${detailId}`)
             .then((response => response.json()))
             .then((char) => {
                 if (char.name) {
@@ -27,7 +26,7 @@ export default function Detail() {
                 window.alert('No hay personajes con ese ID')
             });
         return setCharacter({});
-    }, [])
+    }, [detailId])
 
     return (
         <div className={styles.detalle}>

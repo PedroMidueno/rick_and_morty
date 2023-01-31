@@ -11,7 +11,7 @@
     flex-direction: row;
     justify-content: flex-end;
     position: relative;
-    
+
 
 }
 
@@ -32,7 +32,7 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
-    
+
 }
 
 .menu {
@@ -42,10 +42,10 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    
+
 }
 
-.menu li a{
+.menu li a {
     display: inline-flex;
     margin: auto 18px;
     font-size: 25px;
@@ -70,7 +70,7 @@
 
 .logout {
     position: absolute;
-/*    border:1px solid black;*/
+    /*    border:1px solid black;*/
     width: 100px;
     top: 10px;
     line-height: 20px;
@@ -80,7 +80,9 @@
     color: #fff;
     font-weight: bold;
     transition: all .1s ease;
+    cursor: pointer;
 }
+
 
 .navBar a {
     text-decoration: none;
